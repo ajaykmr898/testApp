@@ -9,7 +9,6 @@
 * Capacitor 4+
 * Swiper 8+
 * Animate.css 4+
-* Chart.js 4+
 
 ---
 
