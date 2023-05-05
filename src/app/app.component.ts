@@ -66,7 +66,6 @@ export class AppComponent {
     const ti = interval(10000);
     ti.subscribe(() => {
       this.update.checkForUpdate().then(() => alert('current 3'));
-      alert('current 4');
     });
   }
 }
