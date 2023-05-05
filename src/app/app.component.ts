@@ -54,7 +54,9 @@ export class AppComponent {
       }
     });
 
-    this.update.activated.subscribe((event) => {});
+    this.update.activated.subscribe((event) => {
+      alert('updated');
+    });
   }
 
   checkUpdate() {
