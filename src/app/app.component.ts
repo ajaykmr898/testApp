@@ -61,12 +61,10 @@ export class AppComponent {
   }
 
   checkUpdate() {
-    this.ref.isStable.subscribe(() => {
-      const ti = interval(5000);
-      ti.subscribe(() => {
-        this.update.checkForUpdate().then(() => console.log('checked'));
-        console.log('update checked');
-      });
+    const ti = interval(5000);
+    ti.subscribe(() => {
+      this.update.checkForUpdate().then(() => console.log('checked'));
+      console.log('update checked');
     });
   }
 }
