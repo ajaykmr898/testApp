@@ -45,27 +45,28 @@ export class AppComponent {
   }
 
   updateClient() {
+    alert('here');
     if (!this.update.isEnabled) {
       console.log('Not Enabled');
       return;
     }
     this.update.available.subscribe((event) => {
-      console.log('current 1', event.current, event.available);
+      alert('current 1');
       if (confirm('new update available')) {
         this.update.activateUpdate().then(() => location.reload());
       }
     });
 
     this.update.activated.subscribe((event) => {
-      console.log('current 2', event.current, event.previous);
+      alert('current 2');
     });
   }
 
   checkUpdate() {
-    const ti = interval(5000);
+    const ti = interval(10000);
     ti.subscribe(() => {
-      this.update.checkForUpdate().then(() => console.log('checked'));
-      console.log('update checked');
+      this.update.checkForUpdate().then(() => alert('current 3'));
+      alert('current 4');
     });
   }
 }
