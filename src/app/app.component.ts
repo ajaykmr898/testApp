@@ -22,6 +22,7 @@ export class AppComponent {
 
   // Initialize app
   initializeApp() {
+    this.checkUpdate();
     // Wait until platform is ready
     this.platform.ready().then(async () => {
       // If we're on a mobile platform (iOS / Android), not web
