@@ -47,7 +47,7 @@ export class AppComponent {
   updateClient() {
     alert('here');
     if (!this.update.isEnabled) {
-      console.log('Not Enabled');
+      alert('current 0');
       return;
     }
     this.update.available.subscribe((event) => {
