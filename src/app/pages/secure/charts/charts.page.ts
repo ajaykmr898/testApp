@@ -7,6 +7,7 @@ import { HelperService } from 'src/app/services/helper/helper.service';
   styleUrls: ['./charts.page.scss'],
 })
 export class ChartsPage implements OnInit {
+  content_loaded: boolean = false;
   constructor(private helperService: HelperService) {}
 
   ngOnInit() {
