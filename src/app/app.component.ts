@@ -45,27 +45,22 @@ export class AppComponent {
   }
 
   updateClient() {
-    alert('here');
     if (!this.update.isEnabled) {
-      alert('current 0');
       return;
     }
     this.update.available.subscribe((event) => {
-      alert('current 1');
       if (confirm('new update available')) {
         this.update.activateUpdate().then(() => location.reload());
       }
     });
 
-    this.update.activated.subscribe((event) => {
-      alert('current 2');
-    });
+    this.update.activated.subscribe((event) => {});
   }
 
   checkUpdate() {
     const ti = interval(10000);
     ti.subscribe(() => {
-      this.update.checkForUpdate().then(() => alert('current 3'));
+      this.update.checkForUpdate().then(() => console.log('check'));
     });
   }
 }
