@@ -52,7 +52,7 @@ export class SigninPage implements OnInit {
       // Proceed with loading overlay
       const loading = await this.loadingController.create({
         cssClass: 'default-loading',
-        message: '<p>Signing in...</p><span>Please be patient.</span>',
+        message: 'Signing in',
         spinner: 'crescent'
       });
       await loading.present();
