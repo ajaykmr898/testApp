@@ -10,25 +10,24 @@ import { AppComponent } from './app.component';
 // ReactiveForms
 import { ReactiveFormsModule } from '@angular/forms';
 import { ServiceWorkerModule } from '@angular/service-worker';
-import { environment } from '../environments/environment';
-import {MapComponent} from "./pages/components/map/map.component";
+import { environment } from '@environments/environment';
 import {TranslateModule} from "@ngx-translate/core";
 
 @NgModule({
-  declarations: [AppComponent, MapComponent],
-  entryComponents: [],
-  imports: [
-    BrowserModule,
-    IonicModule.forRoot(),
-    ReactiveFormsModule,
-    AppRoutingModule,
-    ServiceWorkerModule.register('ngsw-worker.js', {
-      enabled: environment.production,
-    }),
-    TranslateModule
-  ],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
-  bootstrap: [AppComponent],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+    declarations: [AppComponent],
+    entryComponents: [],
+    imports: [
+        BrowserModule,
+        IonicModule.forRoot(),
+        ReactiveFormsModule,
+        AppRoutingModule,
+        ServiceWorkerModule.register('ngsw-worker.js', {
+            enabled: environment.production,
+        }),
+        TranslateModule
+    ],
+    providers: [{provide: RouteReuseStrategy, useClass: IonicRouteStrategy}],
+    bootstrap: [AppComponent],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule {}
