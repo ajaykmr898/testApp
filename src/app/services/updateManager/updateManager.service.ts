@@ -71,6 +71,7 @@ export class UpdateManagerService {
   cancelUpdate() {
     let date = new Date();
     date.setHours(1);
+    this.alertController.dismiss();
     localStorage.setItem('delay', date.toString());
   }
 }
