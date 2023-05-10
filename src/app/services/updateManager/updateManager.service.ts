@@ -60,9 +60,14 @@ export class UpdateManagerService {
     console.log('checkUpdate');
     const ti = interval(this.interval);
     ti.subscribe(() => {
-      this.update.checkForUpdate().then(() => {
-        console.log('checking...');
-      });
+      let ask = localStorage.getItem('ask');
+      if (ask) {
+        this.showAlert();
+      } else {
+        this.update.checkForUpdate().then(() => {
+          console.log('checking...');
+        });
+      }
     });
   }
 
@@ -71,6 +76,7 @@ export class UpdateManagerService {
   }
 
   async cancelUpdate() {
+    localStorage.setItem('ask', 'true');
     await this.alert.dismiss();
   }
 }
