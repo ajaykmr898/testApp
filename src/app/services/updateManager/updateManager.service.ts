@@ -15,6 +15,9 @@ export class UpdateManagerService {
   ) {}
 
   showAlert() {
+    if (this.alert) {
+      this.alert.dismiss();
+    }
     this.alertController
       .create({
         header: 'Update',
@@ -61,7 +64,7 @@ export class UpdateManagerService {
     const ti = interval(this.interval);
     ti.subscribe(() => {
       let ask = localStorage.getItem('ask');
-      if (ask) {
+      if (ask && ask === 'true') {
         this.showAlert();
       } else {
         this.update.checkForUpdate().then(() => {
@@ -72,6 +75,7 @@ export class UpdateManagerService {
   }
 
   applyUpdate() {
+    localStorage.removeItem('ask');
     this.update.activateUpdate().then(() => window.location.reload());
   }
 
