@@ -7,7 +7,8 @@ import { SwUpdate } from '@angular/service-worker';
   providedIn: 'root',
 })
 export class UpdateManagerService {
-  interval = 5000;
+  interval = 10000;
+  alert = null;
   constructor(
     private update: SwUpdate,
     private alertController: AlertController
@@ -28,19 +29,20 @@ export class UpdateManagerService {
           },
           {
             text: 'Later',
-            handler: () => {
-              this.cancelUpdate();
+            handler: async () => {
+              await this.cancelUpdate();
             },
           },
         ],
       })
       .then(async (res) => {
-        await res.present();
+        this.alert = res;
+        await this.alert.present();
       });
   }
 
   updateClient() {
-    console.log('checking...');
+    console.log('updateClient searching...');
     if (!this.update.isEnabled) {
       return;
     }
@@ -55,11 +57,11 @@ export class UpdateManagerService {
   }
 
   checkUpdate() {
-    let date = localStorage.getItem('delay');
+    console.log('checkUpdate');
     const ti = interval(this.interval);
     ti.subscribe(() => {
       this.update.checkForUpdate().then(() => {
-        console.log('check', date);
+        console.log('checking...');
       });
     });
   }
@@ -68,10 +70,7 @@ export class UpdateManagerService {
     this.update.activateUpdate().then(() => window.location.reload());
   }
 
-  cancelUpdate() {
-    let date = new Date();
-    date.setHours(1);
-    this.alertController.dismiss();
-    localStorage.setItem('delay', date.toString());
+  async cancelUpdate() {
+    await this.alert.dismiss();
   }
 }
