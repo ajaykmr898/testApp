@@ -55,10 +55,12 @@ export class UpdateManagerService {
   }
 
   checkUpdate() {
-    console.log('searching...');
+    let date = localStorage.getItem('delay');
     const ti = interval(this.interval);
     ti.subscribe(() => {
-      this.update.checkForUpdate().then(() => console.log('check'));
+      this.update.checkForUpdate().then(() => {
+        console.log('check', date);
+      });
     });
   }
 
@@ -67,6 +69,8 @@ export class UpdateManagerService {
   }
 
   cancelUpdate() {
-    console.log('canceled');
+    let date = new Date();
+    date.setHours(1);
+    localStorage.setItem('delay', date.toString());
   }
 }
