@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ActionSheetController, NavController } from '@ionic/angular';
-import { ToastService } from 'src/app/services/toast/toast.service';
+import { ToastService } from '@services/toast/toast.service';
 
 @Component({
   selector: 'app-edit',

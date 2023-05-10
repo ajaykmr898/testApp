@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { LoadingController } from '@ionic/angular';
-import { AuthService } from 'src/app/services/auth/auth.service';
+import { AuthService } from '@services/auth/auth.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ToastService } from 'src/app/services/toast/toast.service';
+import { ToastService } from '@services/toast/toast.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -45,7 +45,7 @@ export class SigninPage implements OnInit {
 
     // If email or password empty
     if (this.signin_form.value.email == '' || this.signin_form.value.password == '') {
-      this.toastService.presentToast('Error', 'Please input email and password', 'top', 'danger', 2000);
+      await this.toastService.presentToast('Error', 'Please input email and password', 'top', 'danger', 2000);
 
     } else {
 
@@ -64,7 +64,7 @@ export class SigninPage implements OnInit {
       setTimeout(async () => {
         // Sign in success
         await this.router.navigate(['/home']);
-        loading.dismiss();
+        await loading.dismiss();
       }, 2000);
 
     }

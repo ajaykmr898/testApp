@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { LoadingController } from '@ionic/angular';
-import { AuthService } from 'src/app/services/auth/auth.service';
+import { AuthService } from '@services/auth/auth.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ToastService } from 'src/app/services/toast/toast.service';
+import { ToastService } from '@services/toast/toast.service';
 import { Router } from '@angular/router';
 
 @Component({
