@@ -5,6 +5,7 @@ import { Capacitor } from '@capacitor/core';
 import { Platform } from '@ionic/angular';
 import { SwUpdate } from '@angular/service-worker';
 import { interval } from 'rxjs';
+import { environment } from '../environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -22,8 +23,10 @@ export class AppComponent {
 
   // Initialize app
   initializeApp() {
-    this.checkUpdate();
-    this.updateClient();
+    if (environment.production) {
+      this.checkUpdate();
+      this.updateClient();
+    }
     // Wait until platform is ready
     this.platform.ready().then(async () => {
       // If we're on a mobile platform (iOS / Android), not web
