@@ -1,11 +1,9 @@
 import { ApplicationRef, Component } from '@angular/core';
 import { SplashScreen } from '@capacitor/splash-screen';
-import { StatusBar, Style } from '@capacitor/status-bar';
 import { Capacitor } from '@capacitor/core';
 import { Platform } from '@ionic/angular';
-import { SwUpdate } from '@angular/service-worker';
-import { interval } from 'rxjs';
 import { environment } from '../environments/environment';
+import { UpdateManagerService } from './services/updateManager/updateManager.service';
 
 @Component({
   selector: 'app-root',
@@ -15,8 +13,8 @@ import { environment } from '../environments/environment';
 export class AppComponent {
   constructor(
     private platform: Platform,
-    private update: SwUpdate,
-    private ref: ApplicationRef
+    private ref: ApplicationRef,
+    private update: UpdateManagerService
   ) {
     this.initializeApp();
   }
@@ -24,8 +22,8 @@ export class AppComponent {
   // Initialize app
   initializeApp() {
     if (environment.production) {
-      this.checkUpdate();
-      this.updateClient();
+      this.update.checkUpdate();
+      this.update.updateClient();
     }
     // Wait until platform is ready
     this.platform.ready().then(async () => {
@@ -44,28 +42,6 @@ export class AppComponent {
         // Hide SplashScreen
         await SplashScreen.hide();
       }, 2000);
-    });
-  }
-
-  updateClient() {
-    if (!this.update.isEnabled) {
-      return;
-    }
-    this.update.available.subscribe((event) => {
-      if (confirm('new update available')) {
-        this.update.activateUpdate().then(() => location.reload());
-      }
-    });
-
-    this.update.activated.subscribe((event) => {
-      alert('updated');
-    });
-  }
-
-  checkUpdate() {
-    const ti = interval(10000);
-    ti.subscribe(() => {
-      this.update.checkForUpdate().then(() => console.log('check'));
     });
   }
 }
