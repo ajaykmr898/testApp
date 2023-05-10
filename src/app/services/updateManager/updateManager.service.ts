@@ -40,10 +40,12 @@ export class UpdateManagerService {
   }
 
   updateClient() {
+    console.log('checking...');
     if (!this.update.isEnabled) {
       return;
     }
     this.update.available.subscribe((event) => {
+      console.log('available');
       this.showAlert();
     });
 
@@ -53,6 +55,7 @@ export class UpdateManagerService {
   }
 
   checkUpdate() {
+    console.log('searching...');
     const ti = interval(this.interval);
     ti.subscribe(() => {
       this.update.checkForUpdate().then(() => console.log('check'));
