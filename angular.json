@@ -42,7 +42,10 @@
             "optimization": false,
             "namedChunks": true,
             "serviceWorker": true,
-            "ngswConfigPath": "ngsw-config.json"
+            "ngswConfigPath": "ngsw-config.json",
+            "allowedCommonJsDependencies": [
+              "fast-deep-equal"
+            ]
           },
           "configurations": {
             "production": {
