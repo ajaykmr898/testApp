@@ -1,0 +1,59 @@
+{
+  "appName": "Sazio",
+  "selectLanguage": "Select Language",
+  "selectLanguage-EN": "English",
+  "selectLanguage-FR": "French",
+  "tab-home": "Home",
+  "tab-messages": "DMs",
+  "tab-account": "Account",
+  "logOut": "Log out",
+  "welcome": {
+    "download": "Download",
+    "next": "Name",
+    "getStarted": "Get Started",
+    "p1": {
+      "heading1": "In search of food?",
+      "heading2": "We are here to help!"
+    },
+    "p2": {
+      "heading1": "Why?",
+      "heading2": "To make the world a better place!"
+    },
+    "p3": {
+      "heading1": "At cost 0$",
+      "heading2": ""
+    }
+  },
+  "singIn": {
+    "signUp": "Sign up",
+    "signIn": "Sign In",
+    "title": "Sign In",
+    "subText": "Login to your account.",
+    "email": "Email",
+    "password": "Password",
+    "forgotPassword": "Forgot password?",
+    "devCopy": "Akwares"
+  },
+  "singUp": {
+    "signUp": "Sign up",
+    "signIn": "Sign In",
+    "title": "Sign Up",
+    "subText": "Create a free account.",
+    "email": "Email",
+    "password": "Password",
+    "passwordRepeat": "Password repeat",
+    "signUpFree": "Sign up free",
+    "devCopy": "Akwares"
+  },
+  "passwordReset": {
+    "signUp": "Sign up",
+    "signIn": "Sign In",
+    "title": "Sign Up",
+    "subText": "Create a free account.",
+    "email": "Email",
+    "devCopy": "Akwares",
+    "forgotPassword": "Forgot password?",
+    "resetPasswordText": "Reset your password.",
+    "resetPasswordBtn": "Reset password"
+  }
+}

@@ -1,7 +1,7 @@
 {
-	"appId": "com.ionic.pwa",
+	"appId": "com.akwares.sazio",
 	"appName": "Sazio",
 	"webDir": "src",
 	"bundledWebRuntime": false,
-	"ios": { "scheme": "Ionic PWA" }
+	"ios": { "scheme": "Sazio" }
 }

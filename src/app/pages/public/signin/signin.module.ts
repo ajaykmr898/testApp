@@ -7,15 +7,17 @@ import { IonicModule } from '@ionic/angular';
 import { SigninPageRoutingModule } from './signin-routing.module';
 
 import { SigninPage } from './signin.page';
+import {TranslateModule} from "@ngx-translate/core";
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    SigninPageRoutingModule,
-    ReactiveFormsModule
-  ],
+    imports: [
+        CommonModule,
+        FormsModule,
+        IonicModule,
+        SigninPageRoutingModule,
+        ReactiveFormsModule,
+        TranslateModule
+    ],
   declarations: [SigninPage]
 })
 export class SigninPageModule {}

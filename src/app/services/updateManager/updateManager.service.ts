@@ -76,7 +76,7 @@ export class UpdateManagerService {
 
   applyUpdate() {
     localStorage.removeItem('ask');
-    this.update.activateUpdate().then(() => window.location.reload());
+    // this.update.activateUpdate().then(() => window.location.reload());
   }
 
   async cancelUpdate() {

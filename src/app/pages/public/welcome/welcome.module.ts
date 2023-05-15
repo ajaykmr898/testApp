@@ -10,15 +10,17 @@ import { WelcomePage } from './welcome.page';
 
 // Swiper
 import { SwiperModule } from 'swiper/angular';
+import {TranslateModule} from "@ngx-translate/core";
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    WelcomePageRoutingModule,
-    SwiperModule
-  ],
+    imports: [
+        CommonModule,
+        FormsModule,
+        IonicModule,
+        WelcomePageRoutingModule,
+        SwiperModule,
+        TranslateModule
+    ],
   declarations: [WelcomePage]
 })
 export class WelcomePageModule {}

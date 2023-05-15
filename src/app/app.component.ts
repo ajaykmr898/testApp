@@ -2,8 +2,9 @@ import { ApplicationRef, Component } from '@angular/core';
 import { SplashScreen } from '@capacitor/splash-screen';
 import { Capacitor } from '@capacitor/core';
 import { Platform } from '@ionic/angular';
-import { environment } from '../environments/environment';
-import { UpdateManagerService } from './services/updateManager/updateManager.service';
+import { environment } from '@environments/environment';
+import { UpdateManagerService } from '@services/updateManager/updateManager.service';
+import {TranslateService} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-root',
@@ -14,9 +15,11 @@ export class AppComponent {
   constructor(
     private platform: Platform,
     private ref: ApplicationRef,
-    private update: UpdateManagerService
+    private update: UpdateManagerService,
+    private translate: TranslateService
   ) {
-    this.initializeApp();
+    this.translate.setDefaultLang('en');
+    // this.initializeApp();
   }
 
   // Initialize app

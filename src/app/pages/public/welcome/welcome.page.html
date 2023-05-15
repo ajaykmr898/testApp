@@ -5,10 +5,23 @@
       <ion-icon name="logo-ionic" class="animate__animated animate__fadeInDown"></ion-icon>
 
       <h3 class="animate__animated animate__fadeInUp">
-        <ion-text color="light">Ionic PWA 123</ion-text>
+        <ion-text color="light">{{ 'appName' | translate }}</ion-text>
       </h3>
+
+      <ion-list [style.width]="'20%'">
+        <ion-item>
+          <ion-select aria-label="Language selection" interface="action-sheet" placeholder="{{ 'selectLanguage' | translate }}"
+                      (ionChange)="changeLang($event.detail.value)" value="en">
+            <ion-select-option value="en">EN</ion-select-option>
+            <ion-select-option value="fr">FR</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+
       <p class="animate__animated animate__fadeInUp">
-        <ion-text color="medium">Latest Ionic version with PWA support.</ion-text>
+        <ion-text color="small">{{ 'welcome.p1.heading1' | translate }}</ion-text>
+        <br>
+        <ion-text color="medium">{{ 'welcome.p1.heading2' | translate }}</ion-text>
       </p>
     </ng-template>
 
@@ -16,10 +29,10 @@
       <ion-icon name="logo-capacitor" class="animate__animated animate__fadeInDown"></ion-icon>
 
       <h3 class="animate__animated animate__fadeInUp">
-        <ion-text color="light">Capacitor Ready</ion-text>
+        <ion-text color="light">{{ 'welcome.p2.heading1' | translate }}</ion-text>
       </h3>
       <p class="animate__animated animate__fadeInUp">
-        <ion-text color="medium">Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore optio mollitia sed sint quod, repellendus illum ex, doloribus, quis ipsam officiis hic saepe commodi? Ab porro laboriosam totam iure et.</ion-text>
+        <ion-text color="medium">{{ 'welcome.p2.heading2' | translate }}</ion-text>
       </p>
     </ng-template>
 
@@ -27,22 +40,22 @@
       <ion-icon name="stats-chart" class="animate__animated animate__fadeInDown"></ion-icon>
 
       <h3 class="animate__animated animate__fadeInUp">
-        <ion-text color="light">Components Sample</ion-text>
+        <ion-text color="light">{{ 'welcome.p3.heading1' | translate }}</ion-text>
       </h3>
       <p class="animate__animated animate__fadeInUp">
-        <ion-text color="medium">Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore optio mollitia sed sint quod, repellendus illum ex, doloribus, quis ipsam officiis hic saepe commodi? Ab porro laboriosam totam iure et.</ion-text>
+        <ion-text color="medium">{{ 'welcome.p3.heading2' | translate }}</ion-text>
       </p>
     </ng-template>
   </swiper>
 </ion-content>
 
 <ion-footer class="ion-padding-bottom-large animate__animated animate__fadeInUp">
-  <ion-button class="ion-margin" *ngIf="!standalone" expand="block" size="large" color="secondary" (click)="addToHomeScreen()">Download</ion-button>
+  <ion-button class="ion-margin" *ngIf="!standalone" expand="block" size="large" color="secondary" (click)="addToHomeScreen()">{{ 'welcome.download' | translate }}</ion-button>
   <ion-button class="ion-margin" expand="block" size="large" color="secondary" (click)="nextSlide()" *ngIf="!last_slide">
-    Next
+    {{ 'welcome.next' | translate }}
     <ion-icon slot="end" name="arrow-forward-outline"></ion-icon>
   </ion-button>
   <ion-button class="ion-margin" expand="block" size="large" color="secondary" (click)="getStarted()" *ngIf="last_slide">
-    Get started
+    {{ 'welcome.getStarted' | translate }}
   </ion-button>
 </ion-footer>

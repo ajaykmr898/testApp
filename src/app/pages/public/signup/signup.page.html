@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar color="dark">
     <ion-buttons slot="start">
-      <ion-back-button color="secondary" text="Sign in" defaultHref="/signin"></ion-back-button>
+      <ion-back-button color="secondary" text="{{ 'singUp.signIn' | translate }}" defaultHref="/signin"></ion-back-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -12,10 +12,10 @@
 
     <div class="logo-container">
       <h1 class="animate__animated animate__fadeInUp">
-        <ion-text color="light">Sign Up</ion-text>
+        <ion-text color="light">{{ "singUp.title" | translate }}</ion-text>
       </h1>
       <p class="animate__animated animate__fadeInUp">
-        <ion-text color="secondary">Create a free account.</ion-text>
+        <ion-text color="secondary">{{ "singUp.subText" | translate }}</ion-text>
       </p>
     </div>
 
@@ -24,7 +24,7 @@
       <ion-item color="dark" class="animate__animated animate__fadeInUp">
         <ion-label position="floating">
           <ion-icon name="mail" item-start></ion-icon>
-          Email
+          {{ "singUp.email" | translate }}
         </ion-label>
         <ion-input color="secondary" type="email" autocomplete="off" formControlName="email"></ion-input>
       </ion-item>
@@ -32,7 +32,7 @@
       <ion-item color="dark" class="animate__animated animate__fadeInUp">
         <ion-label position="floating">
           <ion-icon name="lock-closed-outline"></ion-icon>
-          Password
+          {{ "singUp.password" | translate }}
         </ion-label>
         <ion-input color="secondary" formControlName="password" type="password" placeholder="Your password"></ion-input>
       </ion-item>
@@ -40,19 +40,19 @@
       <ion-item color="dark" class="animate__animated animate__fadeInUp">
         <ion-label position="floating">
           <ion-icon name="lock-closed-outline"></ion-icon>
-          Password repeat
+          {{ "singUp.passwordRepeat" | translate }}
         </ion-label>
         <ion-input color="secondary" formControlName="password_repeat" type="password" placeholder="Password repeat"></ion-input>
       </ion-item>
 
       <ion-button class="ion-margin-top" type="submit" expand="block" size="large" color="secondary">
-        Sign up free
+        {{ "singUp.signUpFree" | translate }}
       </ion-button>
     </form>
 
     <div class="ion-text-center ion-margin-top">
       <ion-text color="medium">
-        <small>&copy;{{current_year}} Kumar.dev</small>
+        <small>&copy;{{current_year}}{{ "singUp.devCopy" | translate }}</small>
       </ion-text>
     </div>
 

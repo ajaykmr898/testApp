@@ -1,0 +1,59 @@
+{
+  "appName": "Sazio",
+  "selectLanguage": "Choisir la langue",
+  "selectLanguage-EN": "Anglais",
+  "selectLanguage-FR": "Français",
+  "tab-home": "Maison",
+  "tab-messages": "DM",
+  "tab-account": "Compte",
+  "logOut": "Se déconnecter",
+  "welcome": {
+    "download": "Télécharger",
+    "next": "Nom",
+    "getStarted": "Commencer",
+    "p1": {
+      "heading1": "A la recherche de nourriture ?",
+      "heading2": "Nous sommes ici pour aider!"
+    },
+    "p2": {
+      "heading1": "Pourquoi?",
+      "heading2": "Pour rendre le monde meilleur !"
+    },
+    "p3": {
+      "heading1": "Au coût 0$",
+      "heading2": ""
+    }
+  },
+  "singIn": {
+    "signUp": "S'inscrire",
+    "signIn": "S'identifier",
+    "title": "S'identifier",
+    "subText": "Connectez-vous à votre compte.",
+    "email": "E-mail",
+    "password": "Mot de passe",
+    "forgotPassword": "Mot de passe oublié?",
+    "devCopy": "Akwares"
+  },
+  "singUp": {
+    "signUp": "S'inscrire",
+    "signIn": "S'identifier",
+    "title": "S'inscrire",
+    "subText": "Créer un compte gratuit.",
+    "email": "E-mail",
+    "password": "Mot de passe",
+    "passwordRepeat": "Répéter le mot de passe",
+    "signUpFree": "Inscription gratuite",
+    "devCopy": "Akwares"
+  },
+  "passwordReset": {
+    "signUp": "S'inscrire",
+    "signIn": "S'identifier",
+    "title": "S'inscrire",
+    "subText": "Créer un compte gratuit.",
+    "email": "E-mail",
+    "devCopy": "Akwares",
+    "forgotPassword": "Mot de passe oublié?",
+    "resetPasswordText": "Réinitialisez votre mot de passe.",
+    "resetPasswordBtn": "Réinitialiser le mot de passe"
+  }
+}

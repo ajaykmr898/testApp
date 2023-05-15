@@ -11,7 +11,8 @@ import SwiperCore, { SwiperOptions, Pagination } from 'swiper';
 SwiperCore.use([Pagination]);
 
 import { Router } from '@angular/router';
-import { ToastService } from '../../../services/toast/toast.service';
+import { ToastService } from '@services/toast/toast.service';
+import {TranslateService} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-welcome',
@@ -47,7 +48,8 @@ export class WelcomePage implements AfterContentChecked {
   constructor(
     private router: Router,
     private ref: ChangeDetectorRef,
-    private toastService: ToastService
+    private toastService: ToastService,
+    private translate: TranslateService
   ) {}
 
   addToHomeScreen() {
@@ -103,4 +105,10 @@ export class WelcomePage implements AfterContentChecked {
     // Navigate to /home
     this.router.navigateByUrl('/signin');
   }
+
+  changeLang(language: string = 'en') {
+    console.log(language);
+    this.translate.setDefaultLang(language);
+  }
+
 }

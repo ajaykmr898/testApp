@@ -2,7 +2,7 @@
   <ion-toolbar color="dark">
     <ion-buttons slot="end">
       <ion-button color="tertiary" routerLink="/signup">
-        Sign up
+        {{ "singIn.signUp" | translate }}
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
@@ -14,10 +14,10 @@
 
     <div class="logo-container">
       <h1 class="animate__animated animate__fadeInUp">
-        <ion-text color="light">Sign In</ion-text>
+        <ion-text color="light">{{ "singIn.title" | translate }}</ion-text>
       </h1>
       <p class="animate__animated animate__fadeInUp">
-        <ion-text color="tertiary">Login to your account.</ion-text>
+        <ion-text color="tertiary">{{ "singIn.subText" | translate }}</ion-text>
       </p>
     </div>
 
@@ -26,7 +26,7 @@
       <ion-item color="dark" class="animate__animated animate__fadeInUp">
         <ion-label position="floating">
           <ion-icon name="mail" item-start></ion-icon>
-          Email
+          {{ "singIn.email" | translate }}
         </ion-label>
         <ion-input color="tertiary" type="email" formControlName="email"></ion-input>
       </ion-item>
@@ -34,23 +34,23 @@
       <ion-item color="dark" class="animate__animated animate__fadeInUp">
         <ion-label position="floating">
           <ion-icon name="lock-closed-outline"></ion-icon>
-          Password
+          {{ "singIn.password" | translate }}
         </ion-label>
         <ion-input color="tertiary" formControlName="password" type="password" placeholder="Your password"></ion-input>
       </ion-item>
 
       <ion-button class="ion-margin-top" type="submit" expand="block" size="large" color="tertiary">
-        Sign in
+        {{ "singIn.signIn" | translate }}
       </ion-button>
 
       <ion-button color="light" fill="clear" expand="block" class="ion-button-small ion-margin-top-medium" routerLink="/password-reset">
-        Forgot password?
+        {{ "singIn.forgotPassword" | translate }}
       </ion-button>
     </form>
 
     <div class="ion-text-center ion-margin-top">
       <ion-text color="medium">
-        <small>&copy;{{current_year}} Kumar.dev</small>
+        <small>&copy;{{current_year}}{{ "singIn.devCopy" | translate }}</small>
       </ion-text>
     </div>
 
